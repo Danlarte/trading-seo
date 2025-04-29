@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
+/* It makes the HTML progress bar filling smooth when value change. */
+progress::-webkit-progress-value {
+  transition: 0.6s width ease-out;
+}
+
+@layer base {
+  .btn-gradient {
+    @apply !bg-gradient !bg-[length:300%_300%] hover:saturate-[1.2] shadow duration-100 !border-0 !border-transparent !bg-transparent animate-shimmer disabled:!bg-none disabled:!bg-gray-500/30  !text-white;
+  }
+  .btn {
+    @apply !capitalize;
+  }
+}
+
+.swiper-button-prev-tweets,
+.swiper-button-next-tweets {
+  width: 44px !important;
+  height: 44px !important;
+  background-color: white;
+}
+
+.swiper-button-prev-tweets::after,
+.swiper-button-next-tweets::after {
+  content: "" !important;
+}
+
+.swiper-button-prev-tweets.swiper-button-disabled,
+.swiper-button-next-tweets.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.filter-blue {
+  filter: invert(23%) sepia(75%) saturate(1073%) hue-rotate(182deg)
+    brightness(94%) contrast(87%);
+}
